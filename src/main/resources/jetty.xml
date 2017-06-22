@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<Configure id="server" class="org.eclipse.jetty.server.Server">
+
+	<New id="dataSource" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg></Arg>
+		<Arg>testDS</Arg>
+		<Arg>
+			<New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+				<Set name="driverClass">org.h2.Driver</Set>
+				<Set name="jdbcUrl">jdbc:h2:mem:test;db_close_on_exit=false</Set>
+				<Set name="user">sa</Set>
+				<Set name="password">sa</Set>
+				<Set name="maxStatements">0</Set>
+				<Set name="maxStatementsPerConnection">100</Set>
+				<Set name="preferredTestQuery">select 1</Set>
+				<Set name="minPoolSize">5</Set>
+				<Set name="initialPoolSize">5</Set>
+				<Set name="maxPoolSize">10</Set>
+				<Set name="maxConnectionAge">1500</Set>
+				<Set name="maxIdleTimeExcessConnections">300</Set>
+				<Set name="maxIdleTime">1500</Set>
+				<Set name="acquireIncrement">2</Set>
+				<Set name="idleConnectionTestPeriod">900</Set>
+				<Set name="checkoutTimeout">12000</Set>
+				<Set name="acquireRetryDelay">2000</Set>
+				<Set name="unreturnedConnectionTimeout">300</Set>
+				<Set name="loginTimeout">3</Set>
+				<Set name="debugUnreturnedConnectionStackTraces">true</Set>
+				<Set name="numHelperThreads">3</Set>
+				<Set name="testConnectionOnCheckin">false</Set>
+				<Set name="testConnectionOnCheckout">false</Set>
+			</New>
+		</Arg>
+	</New>
+	
+</Configure>

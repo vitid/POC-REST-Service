@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<product id="1" name="mockA" price="100.0"/>
+	<product id="2" name="mockB" price="200.0"/>
+	<product id="3" name="mockC" price="300.0"/>
+	<product id="4" name="mockD" price="400.0"/>
+	<product id="5" name="mockE" price="500.0"/>
+	<user_order id="1" product_id="1" quantity="100" order_time="2010-01-01" last_modified="2010-01-01" />
+	<user_order id="2" product_id="1" quantity="200" order_time="2010-01-01" last_modified="2011-01-01" />
+	<user_order id="3" product_id="2" quantity="300" order_time="2010-01-01" last_modified="2012-01-01" />
+	<user_order id="4" product_id="2" quantity="400" order_time="2010-01-01" last_modified="2013-01-01" />
+	<user_order id="5" product_id="5" quantity="500" order_time="2010-01-01" last_modified="2014-01-01" />
+</dataset>

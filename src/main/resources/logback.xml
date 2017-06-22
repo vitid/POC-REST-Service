@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="ch.qos.logback.classic.PatternLayout">
+				<Pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</Pattern>
+			</layout>
+		</encoder>
+	</appender>
+
+	<!-- logback logging -->
+	<logger name="ch.qos.logback" level="ERROR" />
+
+	<!-- connection pool logging -->
+	<logger name="com.mchange.v2" level="WARN" />
+	<logger name="com.mchange.v2.c3p0.management.ActiveManagementCoordinator" level="ERROR"/>
+
+	<!-- commons loggers -->
+	<logger name="org.apache.commons.beanutils" level="ERROR" />
+	<logger name="org.apache.commons.digester" level="ERROR" />
+
+	<!-- spring container loggers -->
+	<logger name="org.springframework" level="INFO" />
+	<logger name="org.springframework.transaction" level="WARN" />
+	<logger name="org.springframework.context.support" level="WARN" />
+	<logger name="org.springframework.context.annotation" level="WARN" />
+	<logger name="org.springframework.beans.factory.support" level="WARN" />
+	<logger name="org.springframework.beans.factory.annotation" level="WARN" />
+
+	<!-- hibernate loggers -->
+	<logger name="org.hibernate" level="ERROR" />
+	<logger name="org.hibernate.cfg" level="ERROR" />
+	<logger name="org.hibernate.impl" level="ERROR" />
+	<logger name="org.hibernate.loader" level="ERROR" />
+	<logger name="org.hibernate.persister" level="ERROR" />
+	<logger name="org.hibernate.transaction" level="DEBUG" />
+	<logger name="org.hibernate.SQL" level="ERROR" />
+	<logger name="org.hibernate.type" level="WARN" />
+	<logger name="org.hibernate.cache" level="ERROR" />
+	<logger name="org.hibernate.jdbc" level="ERROR" />
+
+	<!-- transaction logging -->
+	<logger name="org.springframework.orm.hibernate4.HibernateTransactionManager" level="WARN" />
+	
+	<!-- jersey loggers -->
+	<logger name="com.sun.jersey.spi.spring.container" level="DEBUG" />
+	<logger name="com.sun.jersey.server.impl.application" level="DEBUG" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

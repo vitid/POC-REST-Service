@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping"
+ 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-mapping classpath://org/hibernate/hibernate-mapping-4.0.xsd">
+	<class name="com.server.db.dao.Product" table="product">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		<property name="name" column="name" type="string"/>
+		<property name="price" column="price" type="double"/>
+	</class>
+	<class name="com.server.db.dao.UserOrder" table="user_order">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		<many-to-one name="product" column="product_id" class="com.server.db.dao.Product" lazy="false"/>
+		<property name="quantity" column="quantity" type="int"/>
+		<property name="orderTime" column="order_time" type="timestamp"/>
+		<property name="lastModified" column="last_modified" type="timestamp"/>
+	</class>
+</hibernate-mapping>
